@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>DSFNet</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--     <meta property="og:image" content="https://jonbarron.info/zipnerf/img/nottingham.jpg">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1296">
+    <meta property="og:image:height" content="840">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lhyfst.github.io/dsfnet/"/>
+    <meta property="og:title" content="DSFNet: Dual Space Fusion Network for Occlusion-Robust 3D Dense Face Alignment" />
+    <meta property="og:description" content="Sensitivity to severe occlusion and large view angles limits the usage scenarios of the existing monocular 3D dense face alignment methods. The state-of-the-art 3DMM-based method, directly regresses the model's coefficients, underutilizing the low-level 2D spatial and semantic information, which can actually offer cues for face shape and orientation. In this work, we demonstrate how modeling 3D facial geometry in image and model space jointly can solve the occlusion and view angle problems. Instead of predicting the whole face directly, we regress image space features in the visible facial region by dense prediction first. Subsequently, we predict our model's coefficients based on the regressed feature of the visible regions, leveraging the prior knowledge of whole face geometry from the morphable models to complete the invisible regions. We further propose a fusion network that combines the advantages of both the image and model space predictions to achieve high robustness and accuracy in unconstrained scenarios. Thanks to the proposed fusion module, our method is robust not only to occlusion and large pitch and roll view angles, which is the benefit of our image space approach, but also to noise and large yaw angles, which is the benefit of our model space method. Comprehensive evaluations demonstrate the superior performance of our method compared with the state-of-the-art methods. On the 3D dense face alignment task, we achieve 3.80% NME on the AFLW2000-3D dataset, which outperforms the state-of-the-art method by 5.5%." /> -->
+
+<!--     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sensitivity to severe occlusion and large view angles limits the usage scenarios of the existing monocular 3D dense face alignment methods. The state-of-the-art 3DMM-based method, directly regresses the model's coefficients, underutilizing the low-level 2D spatial and semantic information, which can actually offer cues for face shape and orientation. In this work, we demonstrate how modeling 3D facial geometry in image and model space jointly can solve the occlusion and view angle problems. Instead of predicting the whole face directly, we regress image space features in the visible facial region by dense prediction first. Subsequently, we predict our model's coefficients based on the regressed feature of the visible regions, leveraging the prior knowledge of whole face geometry from the morphable models to complete the invisible regions. We further propose a fusion network that combines the advantages of both the image and model space predictions to achieve high robustness and accuracy in unconstrained scenarios. Thanks to the proposed fusion module, our method is robust not only to occlusion and large pitch and roll view angles, which is the benefit of our image space approach, but also to noise and large yaw angles, which is the benefit of our model space method. Comprehensive evaluations demonstrate the superior performance of our method compared with the state-of-the-art methods. On the 3D dense face alignment task, we achieve 3.80% NME on the AFLW2000-3D dataset, which outperforms the state-of-the-art method by 5.5%."" /> -->
+
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    
+    <script src="js/app.js"></script>
+    <script src="js/video_comparison.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                <b>DSFNet</b>: Dual Space Fusion Network for Occlusion-Robust 3D Dense Face Alignment</br> 
+                <small>
+                CVPR 2023
+                </small>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+
+                    <li>
+                        <a href="https://lhyfst.github.io/">
+                          Heyuan Li
+                        </a>
+                        </br>NUS
+                    </li>
+                    <li>
+                        Bo Wang
+                        </br>CtrsVision
+                    </li>
+                    <li>
+                        Yu Cheng
+                        </br>NUS
+                    </li>
+                    <li>
+                        <a href="https://www.comp.nus.edu.sg/~mohan/">Mohan Kankanhalli</a>
+                        </br>NUS
+                    </li>
+                    <li>
+                        <a href="https://tanrobby.github.io/">Robby T. Tan</a>
+                        </br>NUS
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="row">
+                <div class="col-md-4 col-md-offset-4 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="https://arxiv.org/abs/2305.11522">
+                            <image src="img/dsfnet_paper_image.png" height="60px">
+                                <h4><strong>Paper</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/">
+                            <image src="img/youtube_icon.png" height="60px">
+                                <h4><strong>Video</strong></h4>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <image src="img/vis.png" width="100%">
+                <!-- <video id="v0" width="100%" autoplay loop muted controls>
+                  <source src="img/teaser.mp4" type="video/mp4" />
+                </video> -->
+						</div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+Sensitivity to severe occlusion and large view angles limits the usage scenarios of the existing monocular 3D dense face alignment methods. The state-of-the-art 3DMM-based method, directly regresses the model's coefficients, underutilizing the low-level 2D spatial and semantic information, which can actually offer cues for face shape and orientation. In this work, we demonstrate how modeling 3D facial geometry in image and model space jointly can solve the occlusion and view angle problems. Instead of predicting the whole face directly, we regress image space features in the visible facial region by dense prediction first. Subsequently, we predict our model's coefficients based on the regressed feature of the visible regions, leveraging the prior knowledge of whole face geometry from the morphable models to complete the invisible regions. We further propose a fusion network that combines the advantages of both the image and model space predictions to achieve high robustness and accuracy in unconstrained scenarios. Thanks to the proposed fusion module, our method is robust not only to occlusion and large pitch and roll view angles, which is the benefit of our image space approach, but also to noise and large yaw angles, which is the benefit of our model space method. Comprehensive evaluations demonstrate the superior performance of our method compared with the state-of-the-art methods. On the 3D dense face alignment task, we achieve 3.80% NME on the AFLW2000-3D dataset, which outperforms the state-of-the-art method by 5.5%. 
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Video
+                </h3>
+                <div class="text-center">
+<!--                     <div style="position:relative;padding-top:56.25%;">
+                        <iframe src="https://youtube.com/embed/xrrhynRzC8k" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                    </div> -->
+                    <p>Coming soon...</p>
+                </div>
+            </div>
+        </div>
+<br>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Framework
+                </h3>
+                <image src="img/main_pipeline.png" width="100%">
+
+                <p class="text-justify">
+                    We process the input image in two spaces, the model space and the image space, and subsequently integrate them within a UV space via a fusion module. In the image space branch, we first predict the visible facial region in form of four 2D maps as a inter representation. Subsequently, we use a PointNet-based post-process algorithm to complete the whole face's geometry from the visible part.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Post-process Algorithm
+                </h3>
+                <center><image src="img/post-process.png" width="75%"></center>
+                <p class="text-justify">
+                    We first convert the depth map in the visible face region into a point cloud and align it from the image view to the canonical view using the correspondence map. We use a lightweight PointNet module to process the point cloud and complete the shape of the whole face by predicting the 3DMM shape coefficient. Finally, we align the predicted shape from the canonical view to the image view as a prediction of the image space.
+                </p>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Citation
+                </h3>
+                <div class="form-group col-md-10 col-md-offset-1">
+                    <textarea id="bibtex" class="form-control" readonly>
+@InProceedings{Li_2023_CVPR,
+    author    = {Li, Heyuan and Wang, Bo and Cheng, Yu and Kankanhalli, Mohan and Tan, Robby T.},
+    title     = {DSFNet: Dual Space Fusion Network for Occlusion-Robust 3D Dense Face Alignment},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2023},
+    pages     = {4531-4540}
+}</textarea>
+                </div>
+            </div>
+        </div>
+
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:0px">
+              <br>
+              <p style="text-align:center;font-size:small;">
+                The website template was borrowed from <a href="http://mgharbi.com/">Michaël Gharbi</a> and <a href="https://dorverbin.github.io/refnerf">Ref-NeRF</a>.
+              </p>
+            </td>
+          </tr>
+        </tbody></table>
+
+    </div>
+</body>
+</html>
