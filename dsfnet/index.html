@@ -98,7 +98,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.youtube.com/">
+                            <a href="https://www.youtube.com/watch?v=tNcI-1Y9FW8">
                             <image src="img/youtube_icon.png" height="60px">
                                 <h4><strong>Video</strong></h4>
                             </a>
@@ -143,10 +143,9 @@ Sensitivity to severe occlusion and large view angles limits the usage scenarios
                     Video
                 </h3>
                 <div class="text-center">
-<!--                     <div style="position:relative;padding-top:56.25%;">
-                        <iframe src="https://youtube.com/embed/xrrhynRzC8k" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-                    </div> -->
-                    <p>Coming soon...</p>
+                    <div style="position:relative;padding-top:56.25%;">
+                        <iframe src="https://youtube.com/embed/tNcI-1Y9FW8" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
@@ -176,6 +175,18 @@ Sensitivity to severe occlusion and large view angles limits the usage scenarios
                 <p class="text-justify">
                     We first convert the depth map in the visible face region into a point cloud and align it from the image view to the canonical view using the correspondence map. We use a lightweight PointNet module to process the point cloud and complete the shape of the whole face by predicting the 3DMM shape coefficient. Finally, we align the predicted shape from the canonical view to the image view as a prediction of the image space.
                 </p>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Qualitative Results
+                </h3>
+                <center><image src="img/dsfnet_vis1.png" width="85%"></center>
+                <!-- <center><image src="img/dsfnet_vis2.png" width="75%"></center> -->
             </div>
         </div>
 
