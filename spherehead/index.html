@@ -16,12 +16,13 @@
     <meta property="og:image:width" content="1296">
     <meta property="og:image:height" content="840">
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://lhyfst.github.io/dsfnet/"/>
-    <meta property="og:title" content="DSFNet: Dual Space Fusion Network for Occlusion-Robust 3D Dense Face Alignment" />
-    <meta property="og:description" content="Sensitivity to severe occlusion and large view angles limits the usage scenarios of the existing monocular 3D dense face alignment methods. The state-of-the-art 3DMM-based method, directly regresses the model's coefficients, underutilizing the low-level 2D spatial and semantic information, which can actually offer cues for face shape and orientation. In this work, we demonstrate how modeling 3D facial geometry in image and model space jointly can solve the occlusion and view angle problems. Instead of predicting the whole face directly, we regress image space features in the visible facial region by dense prediction first. Subsequently, we predict our model's coefficients based on the regressed feature of the visible regions, leveraging the prior knowledge of whole face geometry from the morphable models to complete the invisible regions. We further propose a fusion network that combines the advantages of both the image and model space predictions to achieve high robustness and accuracy in unconstrained scenarios. Thanks to the proposed fusion module, our method is robust not only to occlusion and large pitch and roll view angles, which is the benefit of our image space approach, but also to noise and large yaw angles, which is the benefit of our model space method. Comprehensive evaluations demonstrate the superior performance of our method compared with the state-of-the-art methods. On the 3D dense face alignment task, we achieve 3.80% NME on the AFLW2000-3D dataset, which outperforms the state-of-the-art method by 5.5%." /> -->
+    <meta property="og:url" content="https://lhyfst.github.io/spherehead/"/>
+    <meta property="og:title" content="SphereHead: Stable 3D Full-head Synthesis with Spherical Tri-plane Representation" />
+    <meta property="og:description" content="/> -->
 
 <!--     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Sensitivity to severe occlusion and large view angles limits the usage scenarios of the existing monocular 3D dense face alignment methods. The state-of-the-art 3DMM-based method, directly regresses the model's coefficients, underutilizing the low-level 2D spatial and semantic information, which can actually offer cues for face shape and orientation. In this work, we demonstrate how modeling 3D facial geometry in image and model space jointly can solve the occlusion and view angle problems. Instead of predicting the whole face directly, we regress image space features in the visible facial region by dense prediction first. Subsequently, we predict our model's coefficients based on the regressed feature of the visible regions, leveraging the prior knowledge of whole face geometry from the morphable models to complete the invisible regions. We further propose a fusion network that combines the advantages of both the image and model space predictions to achieve high robustness and accuracy in unconstrained scenarios. Thanks to the proposed fusion module, our method is robust not only to occlusion and large pitch and roll view angles, which is the benefit of our image space approach, but also to noise and large yaw angles, which is the benefit of our model space method. Comprehensive evaluations demonstrate the superior performance of our method compared with the state-of-the-art methods. On the 3D dense face alignment task, we achieve 3.80% NME on the AFLW2000-3D dataset, which outperforms the state-of-the-art method by 5.5%."" /> -->
+    <meta name="twitter:title" content="/> -->
+
 
 
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>😜</text></svg>">
@@ -40,6 +41,12 @@
     
     <script src="js/app.js"></script>
     <script src="js/video_comparison.js"></script>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js" integrity="sha512-qW6OUtKvIW8gJ5kP9vzh7tV9pDwi6w7q7Df3RsjF8aN5R6jN6pGSLHicO5H9w5NzV3Su0Kzb3+2pXwJiK5m5Pw==" crossorigin="anonymous"></script> -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
 </head>
 
 <body>
@@ -204,12 +211,10 @@
                 <image src="img/pipeline.png" width="100%">
 
                 <p class="text-justify">
-                    The framework of our proposed SphereHead. Given a sampled code $z$ and camera parameter $c$, SphereHead synthesizes a spherical tri-plane features $f_F$ by fusing two sub-feature groups $f_A$ and $f_B$. By volumetric rendering with the sampled features in $f_F$, SphereHead generates high-quality view-consistent full head images $I^{+}$. The discriminator learns to focus on the alignment between images and their viewpoints instructed by our view-image consistency loss, by introducing an additional negative data pairs consisting the real images and mismatched labels $c_s$.
+                    The framework of our proposed SphereHead. Given a sampled code \(z\) and camera parameter \(c\), SphereHead synthesizes a spherical tri-plane features \(f_F\) by fusing two sub-feature groups \(f_A\) and \(f_B\). By volumetric rendering with the sampled features in \(f_F\), SphereHead generates high-quality view-consistent full head images \(I^{+}\). The discriminator learns to focus on the alignment between images and their viewpoints instructed by our view-image consistency loss, by introducing an additional negative data pairs consisting the real images and mismatched labels \(c_s\).
                 </p>
             </div>
         </div>
-
-
 
         <div class="row">
             <div class="col-md-8 col-md-offset-2">

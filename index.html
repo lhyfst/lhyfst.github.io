@@ -27,6 +27,11 @@
                 I believe simple is better than complex.
               </p>
 
+              <p>
+                I (try to) practice <a href="http://slow-science.org/">Slow Science</a>. Slow is faster than fast. 
+              </p>
+
+              
 
               </p>
               <p style="text-align:center">
@@ -56,6 +61,105 @@
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 				
+          <tr onmouseout="spherehead_stop()" onmouseover="spherehead_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='spherehead_image'>
+                  <video  width=100% muted autoplay loop>
+                    <source src="images/spherehead_after.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <img src='images/spherehead_before.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function spherehead_start() {
+                  document.getElementById('spherehead_image').style.opacity = "1";
+                }
+    
+                function spherehead_stop() {
+                  document.getElementById('spherehead_image').style.opacity = "0";
+                }
+                spherehead_stop()
+              </script>
+            </td>
+    
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <a href="https://lhyfst.github.io/spherehead/">
+              <papertitle>SphereHead: Stable 3D Full-head Synthesis with Spherical Tri-plane Representation</papertitle>
+            </a>
+            <br>
+            <strong>Heyuan Li</strong>,
+             Ce Chen, Tianhao Shi, Yuda Qiu, 
+            <a href="https://sizhean.github.io/">Sizhe An</a>,
+            <a href="https://guanyingc.github.io/">Guanying Chen</a>,
+            <a href="https://gaplab.cuhk.edu.cn/pages/people">Xiaoguang Han</a>
+            <br>
+            <em>Arxiv</em>, 2024
+            <br>
+            <a href="https://lhyfst.github.io/spherehead/">project page</a>
+            /
+            <a href="">arXiv</a>
+            /
+            <a href="">video</a>
+            /
+            <a href="">code</a>
+            <p></p>
+            <p>
+              Achieve 3D full-head synthesis without mirroring-face and multiple-face artifacts via spherical tri-plane representation and view-image consistency loss.
+            </p>
+          </td>
+        </tr>
+
+
+        <tr onmouseout="zast_stop()" onmouseover="zast_start()">
+          <td style="padding:20px;width:25%;vertical-align:middle">
+            <div class="one">
+              <div class="two" id='zast_image'>
+                <video  width=100% muted autoplay loop>
+                  <source src="images/zast_after.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <img src='images/zast_before.png' width="160">
+            </div>
+            <script type="text/javascript">
+              function zast_start() {
+                document.getElementById('zast_image').style.opacity = "1";
+              }
+  
+              function zast_stop() {
+                document.getElementById('zast_image').style.opacity = "0";
+              }
+              zast_stop()
+            </script>
+          </td>
+  
+        <td style="padding:20px;width:75%;vertical-align:middle">
+          <a href="">
+            <papertitle>Zero-shot Real Facial Attribute Separation and Transfer at Novel Views</papertitle>
+          </a>
+          <br>
+          Dingyun Zhang,
+          <strong>Heyuan Li</strong>,
+          <a href="http://staff.ustc.edu.cn/~juyong/">Juyong Zhang</a>
+          <br>
+          <em>CVM</em>, 2024
+          <br>
+          <!-- <a href="https://lhyfst.github.io/spherehead/">project page</a> -->
+          <!-- / -->
+          <a href="http://iccvm.org/2024/papers/lncs/150.pdf">paper</a>
+          <!-- / -->
+          <!-- <a href="">video</a> -->
+          <!-- / -->
+          <!-- <a href="">code</a> -->
+          <p></p>
+          <p>
+            A model that enables real-time and zero-shot attribute separation of a given real face, allowing attribute transfer and rendering at novel views without the aid of multi-view information.
+          </p>
+        </td>
+      </tr>
+
 
       <tr onmouseout="dsfnet_stop()" onmouseover="dsfnet_start()">
         <td style="padding:20px;width:25%;vertical-align:middle">
