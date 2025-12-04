@@ -1,0 +1,297 @@
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>HyPlaneHead</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--     <meta property="og:image" content="https://jonbarron.info/zipnerf/img/nottingham.jpg">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1296">
+    <meta property="og:image:height" content="840">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lhyfst.github.io/spherehead/"/>
+    <meta property="og:title" content="SphereHead: Stable 3D Full-head Synthesis with Spherical Tri-plane Representation" />
+    <meta property="og:description" content="/> -->
+
+<!--     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="/> -->
+
+
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>😜</text></svg>">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    
+    <script src="js/app.js"></script>
+    <script src="js/video_comparison.js"></script>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js" integrity="sha512-qW6OUtKvIW8gJ5kP9vzh7tV9pDwi6w7q7Df3RsjF8aN5R6jN6pGSLHicO5H9w5NzV3Su0Kzb3+2pXwJiK5m5Pw==" crossorigin="anonymous"></script> -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                <b>HyPlaneHead</b>: Rethinking Tri-plane-like Representations in Full-Head Image Synthesis</br> 
+                <small>
+                NeurIPS 2025 
+                </small>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://lhyfst.github.io/">Heyuan Li<sup>1,*</sup></a>
+                    </li>
+                    <li>
+                        <a href="https://kenkunliu.github.io/PersonalPage/">Kenkun Liu<sup>1</sup></a>
+                    </li>
+                    <li>
+                        <a href="https://lingtengqiu.github.io/">Lingteng Qiu<sup>2,†</sup></a>
+                    </li>
+                    <li>
+                        <a href="https://hitsz-zuoqi.github.io/">Qi Zuo<sup>2</sup></a>
+                    </li>
+                    <li>
+                        Keru Zheng<sup>1</sup>
+                    </li>
+                    <li>
+                        Zilong Dong<sup>2</sup>
+                    </li>
+                    <li>
+                        <a href="https://gaplab.cuhk.edu.cn/pages/people">Xiaoguang Han<sup>1,3,4,‡</sup></a>
+                    </li>
+                </ul>
+                <p>
+                    <sup>1</sup>The Chinese University of Hong Kong, Shenzhen &ensp;
+                    <sup>2</sup>Tongyi Lab, Alibaba Inc. &ensp;
+                    <br>
+                    <sup>3</sup>FNii-Shenzhen &ensp;
+                    <sup>4</sup>Guangdong Provincial Key Laboratory of Future Networks of Intelligence
+                    <br>
+                    <sup>*</sup> Work done during an internship at Tongyi Lab, Alibaba Inc. &ensp;
+                    <br>
+                    <sup>†</sup> Project lead. &ensp;
+                    <sup>‡</sup> Corresponding author. &ensp;
+
+                </p>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="row">
+                <div class="col-md-4 col-md-offset-4 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="https://arxiv.org/abs/2509.16748">
+                            <image src="img/spherehead_paper_image.png" height="60px">
+                                <h4><strong>Paper</strong></h4>
+                            </a>
+                        </li>
+                        <!-- <li>
+                            <a href="">
+                            <image src="img/youtube_icon.png" height="60px">
+                                <h4><strong>Video</strong></h4>
+                            </a>
+                        </li> -->
+                        <li>
+                            <a href="https://github.com/lhyfst/HyPlaneHead">
+                            <image src="img/github_icon.png" height="60px">
+                                <h4><strong>Code</strong></h4>
+                            </a>
+                        </li>
+                        <!-- <li>
+                            <a href="">
+                            <image src="img/data_icon.png" height="60px">
+                                <h4><strong>Dataset</strong></h4>
+                            </a>
+                        </li> -->
+                    </ul>
+                </div>
+        </div>
+
+
+
+        <!-- <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <video id="v0" width="100%" autoplay loop muted controls>
+                  <source src="img/SuppVideo_compressed_Trim.mp4" type="video/mp4" />
+                </video>
+						</div>
+        </div> -->
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+                    Tri-plane-like representations have been widely adopted in 3D-aware GANs for head image synthesis and other 3D object/scene modeling tasks due to their efficiency. 
+                    However, querying features via Cartesian coordinate projection often leads to feature entanglement, which results in mirroring artifacts. 
+                    A recent work, SphereHead, attempted to address this issue by introducing spherical tri-planes based on a spherical coordinate system. 
+                    While it successfully mitigates feature entanglement, SphereHead suffers from uneven mapping between the square feature maps and the spherical planes, leading to inefficient feature map utilization during rendering and difficulties in generating fine image details. 
+                    Moreover, both tri-plane and spherical tri-plane representations share a subtle yet persistent issue: feature penetration across convolutional channels can cause interference between planes, particularly when one plane dominates the others. 
+                    These challenges collectively prevent tri-plane-based methods from reaching their full potential. 
+                    In this paper, we systematically analyze these problems for the first time and propose innovative solutions to address them. Specifically, we introduce a novel hybrid-plane (hy-plane for short) representation that combines the strengths of both planar and spherical planes while avoiding their respective drawbacks. 
+                    We further enhance the spherical plane by replacing the conventional theta-phi warping with a novel near-equal-area warping strategy, which maximizes the effective utilization of the square feature map. 
+                    In addition, our generator synthesizes a single-channel unified feature map instead of multiple feature maps in separate channels, thereby effectively eliminating feature penetration. 
+                    With a series of technical improvements, our hy-plane representation enables our method, HyPlaneHead, to achieve state-of-the-art performance in full-head image synthesis.
+                </p>
+            </div>
+        </div>
+
+
+        <!-- <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Video
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:56.25%;">
+                        <iframe src="https://youtube.com/embed/tNcI-1Y9FW8" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+<br> -->
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Comparison with Prior Tri-plane-like Representations
+                </h3>
+                <image src="img/fig1_teaser_v9.png" width="100%">
+
+                <p class="text-justify">
+                    Figure (a, b, c) respectively illustrate the feature map visualizations and geometric structures of the tri-plane, spherical tri-plane, and our proposed hy-plane representation which integrates both planar and spherical planes.
+                    Figure (d) shows a head geometry model for defining the coordinate system.
+                    Note that in (a, b), the dominant planes (\(P_{YZ}\) for tri-plane and \(P_{\theta\phi}\) for spherical tri-plane) cause significant inter-channel feature penetration into the other two planes (best viewed when zoomed in), thereby limiting the model's expressiveness. In contrast, (c) resolves this issue entirely by employing a unify-split strategy, where all feature maps are generated within a single channel. As a result, each plane effectively learns its corresponding information without interference from other planes.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Near-Equal-Area Warping
+                </h3>
+                <center><image src="img/fig3_warping_v7.png" width="100%"></center>
+                <p class="text-justify">
+                    (a) The Lambert azimuthal equal-area projection (LAEA) opens the South Pole, and maps the sphere to (b) a flat circular plane, with the North Pole at its center.
+                    (c) Elliptical grid mapping transforms the circular plane into a square. Conversely, the square can be inversely mapped back to a sphere with near-equal-area properties.
+                    (d) In the hy-plane (2+2) representation, two spheres coincide, with their North Poles facing in opposite directions. Please refer to the supplementary videos for a more comprehensive understanding.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Qualitative Comparison with State-of-the-art Methods
+                </h3>
+                <image src="img/fig5_baseline_v3.png" width="100%">
+
+                <p class="text-justify">
+                    (a) Tri-plane representation from EG3D.
+                    (b) Tri-grid representation from PanoHead.
+                    (c) Single spherical tri-plane representation from SphereHead, where the white dashed box highlights a discontinuity in the hair region.
+                    (d, e) Dual spherical tri-plane representation from SphereHead.
+                    (f–j) Our proposed Hy-plane representation.
+            </div>
+        </div>
+
+
+        <!-- <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Comparison of Single-view Image Inversion
+                </h3>
+                <center><image src="img/supp_pti1.png" width="100%"></center>
+
+                    <p class="text-justify">
+                        Left column (1-16): results of PanoHead. Right column (17-32): results of our SphereHead.
+                    </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Random Sampling Comparison
+                </h3>
+                <center><image src="img/supp_sample1.png" width="100%"></center>
+
+                    <p class="text-justify">
+                        The monocular images on the left are target images from FFHQ dataset. The upper and lower rows on the right portray are the results from PanoHead and our SphereHead model, respectively.
+                    </p>
+
+            </div>
+        </div> -->
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Citation
+                </h3>
+                <div class="form-group col-md-10 col-md-offset-1">
+                    <textarea id="bibtex" class="form-control" readonly>
+@misc{li2025hyplaneheadrethinkingtriplanelikerepresentations,
+      title={HyPlaneHead: Rethinking Tri-plane-like Representations in Full-Head Image Synthesis}, 
+      author={Heyuan Li and Kenkun Liu and Lingteng Qiu and Qi Zuo and Keru Zheng and Zilong Dong and Xiaoguang Han},
+      year={2025},
+      eprint={2509.16748},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2509.16748}, 
+}
+                    </textarea>
+                </div>
+            </div>
+        </div>
+
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:0px">
+              <br>
+              <p style="text-align:center;font-size:small;">
+                The website template was borrowed from <a href="http://mgharbi.com/">Michaël Gharbi</a> and <a href="https://dorverbin.github.io/refnerf">Ref-NeRF</a>.
+              </p>
+            </td>
+          </tr>
+        </tbody></table>
+
+    </div>
+</body>
+</html>
