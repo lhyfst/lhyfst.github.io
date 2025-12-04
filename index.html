@@ -67,30 +67,6 @@
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 				
-
-<!-- 
-          <tr onmouseout="hyplanehead_stop()" onmouseover="hyplanehead_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='hyplanehead_image'>
-                  <video  width=100% muted autoplay loop>
-                    <source src="images/hyplanehead_after.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-                <img src='images/hyplanehead.png' width="160">
-              </div>
-              <script type="text/javascript">
-                function hyplanehead_start() {
-                  document.getElementById('hyplanehead_image').style.opacity = "1";
-                }
-    
-                function hyplanehead_stop() {
-                  document.getElementById('hyplanehead_image').style.opacity = "0";
-                }
-                hyplanehead_stop()
-              </script>
-            </td> -->
     
           <tr onmouseout="hyplanehead_stop()" onmouseover="hyplanehead_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
@@ -141,6 +117,60 @@
             <p></p>
             <p>
               Propose a hy-plane representation that combines the strengths of tri-plane and spherical tri-plane methods while overcoming their inherent limitations.
+            </p>
+          </td>
+        </tr>
+
+
+          <tr onmouseout="diffportrait360_stop()" onmouseover="diffportrait360_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='diffportrait360_image'>
+                  <video  width=100% muted autoplay loop>
+                    <source src="images/diffportrait360_after.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <img src='images/diffportrait360_before.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function diffportrait360_start() {
+                  document.getElementById('diffportrait360_image').style.opacity = "1";
+                }
+    
+                function diffportrait360_stop() {
+                  document.getElementById('diffportrait360_image').style.opacity = "0";
+                }
+                diffportrait360_stop()
+              </script>
+            </td>
+
+
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <a href="https://freedomgu.github.io/DiffPortrait360/">
+              <papertitle>DiffPortrait360: Consistent Portrait Diffusion for 360 View Synthesis</papertitle>
+            </a>
+            <br>
+            <a href="https://freedomgu.github.io/">Yuming Gu</a>,
+            <a href="https://p0lyfish.github.io/portfolio/">Phong Tran</a>,
+            <a href="https://paulyzheng.github.io/about/">Yujian Zheng</a>,
+            <a href="https://hongyixu37.github.io/homepage/index.html">Hongyi Xu</a>,
+            <strong>Heyuan Li</strong>, 
+            Adilbek Karmanov,
+            <a href="https://www.hao-li.com/Hao_Li/Hao_Li_-_about_me.html">Hao Li</a>
+            <br>
+            <em>CVPR</em>, 2025 &nbsp;
+            <br>
+            <a href="https://freedomgu.github.io/DiffPortrait360/">project page</a>
+            /
+            <a href="https://arxiv.org/abs/2503.15667">arXiv</a>
+            /
+            <!-- <a href="">video</a> -->
+            <!-- / -->
+            <a href="https://github.com/FreedomGu/DiffPortrait360/">code</a>
+            <p></p>
+            <p>
+              Integrate a custom ControlNet and dual appearance module to generate globally consistent 360-degree head views capable of high-quality free-viewpoint rendering for both realistic and stylized head images.
             </p>
           </td>
         </tr>
@@ -385,6 +415,24 @@
               </p>
               <p>
                 Conduct the most comprehensive evaluation of various models proposed for time series data prediction on vehicle trajectory forecasting task, and propose a hybrid model that combines the merits of MLP and LSTM. 
+              </p>
+
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <img src="images/bike_sharing_system.png"  width="160" alt="bike_sharing_system">
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+                <papertitle>Bike Sharing System</papertitle>
+              <!-- <p>
+                <i>Trajectory Forecasting with Neural Networks: An Empirical Evaluation and A New Hybrid Model</i>
+                <br>
+                <i>TITS</i>, 2020
+              </p> -->
+              <p>
+                Propose the first neural network-based framework integrated with fuzzy clustering for predicting per-station demand and status in bike-sharing systems, achieving state-of-the-art performance on the New York CitiBike dataset.
               </p>
 
             </td>
