@@ -63,11 +63,76 @@
                 My research goal is to develop a system that produces and drives high-fidelity 3D avatars in real-time using limited cost for everyone.
                 My current research focus is on the generalizability and robustness of NeRF/3DGS-based head avatars learned from large-scale images.
               </p>
+
+              (<sup>*</sup> Equal contribution. &ensp;
+              <sup>†</sup> Project lead. &ensp;
+              <sup>✉</sup> Corresponding author.)
+
             </td>
           </tr>
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 				
+
+          <tr onmouseout="visa_stop()" onmouseover="visa_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='visa_image'>
+                  <video  width=100% muted autoplay loop>
+                    <source src="images/visa_after.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <img src='images/visa_before.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function visa_start() {
+                  document.getElementById('visa_image').style.opacity = "1";
+                }
+    
+                function visa_stop() {
+                  document.getElementById('visa_image').style.opacity = "0";
+                }
+                visa_stop()
+              </script>
+            </td>
+
+
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <a href="https://lhyfst.github.io/hyplanehead/">
+              <papertitle>ViSA: 3D-Aware Video Shading for Real-Time Upper-Body Avatar Creation</papertitle>
+            </a>
+            <br>
+            Fan Yang<sup>*</sup>,
+            <strong>Heyuan Li<sup>*</sup></strong>,
+            <a href="https://liphao99.github.io/">Peihao Li</a>,
+            <a href="https://weihao-yuan.com/">Weihao Yuan</a>,
+            <a href="https://lingtengqiu.github.io/">Lingteng Qiu</a>,
+            <a href="https://chaoyuesong.github.io/">Chaoyue Song</a>,
+            Cheng Chen,
+            Yisheng He,
+            Shifeng Zhang<sup>✉</sup>,
+            <a href="https://gaplab.cuhk.edu.cn/pages/people">Xiaoguang Han</a>,
+            <a href="https://sites.google.com/view/stevenhoi/home">Steven Hoi</a>,
+            <a href="https://guosheng.github.io/">Guosheng Lin<sup>✉</sup></a>
+            <br>
+            <em>Preprint</em>, 2025 &nbsp;
+            <br>
+            <a href="https://lhyfst.github.io/visa/">project page</a>
+            /
+            <a href="https://arxiv.org/">arXiv</a>
+            <!-- / -->
+            <!-- <a href="">video</a> -->
+            <!-- / -->
+            <!-- <a href="https://github.com/lhyfst/HyPlaneHead">code</a> -->
+            <p></p>
+            <p>
+              Combine robust 3D reconstruction priors with real-time autoregressive video diffusion to generate high-fidelity, dynamic upper-body avatars.
+            </p>
+          </td>
+        </tr>
+
+
     
           <tr onmouseout="hyplanehead_stop()" onmouseover="hyplanehead_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
@@ -100,7 +165,7 @@
             <br>
             <strong>Heyuan Li</strong>,
             <a href="https://kenkunliu.github.io/PersonalPage/">Kenkun Liu</a>,
-            <a href="https://lingtengqiu.github.io/">Lingteng Qiu</a>,
+            <a href="https://lingtengqiu.github.io/">Lingteng Qiu<sup>†</sup></a>,
             <a href="https://hitsz-zuoqi.github.io/">Qi Zuo</a>,
             Keru Zheng,
             Zilong Dong,
