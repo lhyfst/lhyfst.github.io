@@ -1,0 +1,397 @@
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>BalanceHead</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--     <meta property="og:image" content="https://jonbarron.info/zipnerf/img/nottingham.jpg">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1296">
+    <meta property="og:image:height" content="840">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lhyfst.github.io/spherehead/"/>
+    <meta property="og:title" content="SphereHead: Stable 3D Full-head Synthesis with Spherical Tri-plane Representation" />
+    <meta property="og:description" content="/> -->
+
+<!--     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="/> -->
+
+
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>😜</text></svg>">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    
+    <script src="js/app.js"></script>
+    <script src="js/video_comparison.js"></script>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js" integrity="sha512-qW6OUtKvIW8gJ5kP9vzh7tV9pDwi6w7q7Df3RsjF8aN5R6jN6pGSLHicO5H9w5NzV3Su0Kzb3+2pXwJiK5m5Pw==" crossorigin="anonymous"></script> -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                Condition Matters in Full-head 3D GANs</br> 
+                <small>
+                ICLR 2026 
+                </small>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://lhyfst.github.io/">Heyuan Li<sup>1,†,*</sup></a>
+                    </li>
+                    <li>
+                        Huimin Zhang<sup>1,†</sup>
+                    </li>
+                    <li>
+                        Yuda Qiu<sup>1</sup>
+                    </li>
+                    <li>
+                        <a href="https://zhengwt-sun.com/">Zhengwentai Sun<sup>1</sup></a>
+                    </li>
+                    <li>
+                        Keru Zheng<sup>1</sup>
+                    </li>
+                    <!-- <br> -->
+                    <li>
+                        <a href="https://lingtengqiu.github.io/">Lingteng Qiu<sup>2,‡</sup></a>
+                    </li>
+                    <li>
+                        <a href="https://liphao99.github.io/">Peihao Li<sup>2</sup></a>
+                    </li>
+                    <li>
+                        <a href="https://hitsz-zuoqi.github.io/">Qi Zuo<sup>2</sup></a>
+                    </li>
+                    <br>
+                    <li>
+                        Ce Chen<sup>1</sup>
+                    </li>
+                    <li>
+                        <a href="https://paulyzheng.github.io/about">Yujian Zheng<sup>3</sup></a>
+                    </li>
+                    <li>
+                        <a href="https://freedomgu.github.io/">Yuming Gu<sup>4</sup></a>
+                    </li>
+                    <li>
+                        Zilong Dong<sup>2,✉</sup>
+                    </li>
+                    <li>
+                        <a href="https://gaplab.cuhk.edu.cn/pages/people">Xiaoguang Han<sup>1,5,6,✉</sup></a>
+                    </li>
+                </ul>
+                <p>
+                    <sup>1</sup>SSE, The Chinese University of Hong Kong, Shenzhen &ensp;
+                    <sup>2</sup>Tongyi Lab, Alibaba Inc. &ensp;
+                    <br>
+                    <sup>3</sup>Mohamed bin Zayed University of Artificial Intelligence &ensp;
+                    <sup>4</sup>University of Southern California &ensp;
+                    <br>
+                    <sup>5</sup>FNii-Shenzhen &ensp;
+                    <sup>6</sup>Guangdong Provincial Key Laboratory of Future Networks of Intelligence
+                    <br>
+                    <sup>*</sup> Work done during an internship at Tongyi Lab. &ensp;
+                    <!-- <br> -->
+                    <sup>†</sup> Equal contribution. &ensp;
+                    <sup>‡</sup> Team lead. &ensp;
+                    <sup>✉</sup> Corresponding author. &ensp;
+
+                </p>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="row">
+                <div class="col-md-4 col-md-offset-4 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="https://arxiv.org/abs/2509.16748">
+                            <image src="img/balancehead_paper_image.png" height="60px">
+                                <h4><strong>Paper</strong></h4>
+                            </a>
+                        </li>
+                        <!-- <li>
+                            <a href="">
+                            <image src="img/youtube_icon.png" height="60px">
+                                <h4><strong>Video</strong></h4>
+                            </a>
+                        </li> -->
+                        <li>
+                            <a href="https://github.com/lhyfst/BalanceHead">
+                            <image src="img/github_icon.png" height="60px">
+                                <h4><strong>Code</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                            <image src="img/data_icon.png" height="60px">
+                                <h4><strong>Dataset</strong></h4>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+
+
+
+        <!-- <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <video id="v0" width="100%" autoplay loop muted controls>
+                  <source src="img/SuppVideo_compressed_Trim.mp4" type="video/mp4" />
+                </video>
+						</div>
+        </div> -->
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <!-- <h3>
+                    Random Sampling
+                </h3> -->
+                <image src="img/fig1_teaser_v8.png" width="100%">
+
+                <p class="text-justify">
+        Our full-head model, BalanceHead, is novelly conditioned on view-invariant semantic features to generate high-fidelity and diverse 3D heads. 
+        From top to bottom, 
+        Rows 1–7 show random-view renderings; 
+        rows 8–10 display multi-view renderings; 
+        rows 11-12 visualize the geometries of the corresponding 3D heads.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+Conditioning is crucial for stable training of full-head 3D-aware GANs. Without any conditioning signal, the model suffers from severe mode collapse, making it impractical to training (fig. 2(a,b)).
+However, a series of previous full-head 3D-aware GANs conventionally choose the view angle as the conditioning input, which leads to a bias in the learned 3D full-head space along the conditional view direction.
+This is evident in the significant differences in generation quality and diversity between the conditional view and non-conditional views of the generated 3D heads, resulting in global incoherence across different head regions (fig. 2(d-i)).
+In this work, we propose to use view-invariant semantic feature as the conditioning input, thereby decoupling the generative capability of 3D heads from the viewing direction. To construct a view-invariant semantic condition for each training image, we create a novel synthesized head image dataset. 
+We leverage FLUX.1 Kontext to extend existing high-quality frontal face datasets to a wide range of view angles. The image clip feature extracted from the frontal view is then used as a shared semantic condition across all views in the extended images, ensuring semantic alignment while eliminating directional bias.
+This also allows supervision from different views of the same subject to be consolidated under a shared semantic condition, which accelerates training (fig. 2(c)) and enhances the global coherence of the generated 3D heads (fig. 1).
+Moreover, as GANs often experience slower improvements in diversity once the generator learns a few modes that successfully fool the discriminator, our semantic conditioning encourages the generator to follow the true semantic distribution, thereby promoting continuous learning and diverse generation.
+Extensive experiments on full-head synthesis and single-view GAN inversion demonstrate that our method achieves significantly higher fidelity, diversity, and generalizability.
+                </p>
+            </div>
+        </div>
+
+
+        <!-- <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Video
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:56.25%;">
+                        <iframe src="https://youtube.com/embed/tNcI-1Y9FW8" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+<br> -->
+
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Conditional-View Bias
+                </h3>
+                <center><image src="img/fig2_intro_v5.png" width="100%"></center>
+                <p class="text-justify">
+        (a) No conditioning leads to early mode collapse and unstable training.
+        (b) Disabling view conditioning mid-training causes rapid collapse within 1000 kimg.
+        (c) Semantic conditioning enables faster and more effective training.
+        (d–i) View-conditioned models show strong directional bias and global incoherence; while conditional views are realistic, non-conditional views are distorted and inconsistent. (d,e), (f,g), and (h,i) are results conditionally generated by random conditional views from PanoHead, SphereHead, and HyPlaneHead.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Data Generation Pipeline
+                </h3>
+                <center><image src="img/fig3_data_pipeline_v5.png" width="100%"></center>
+                <p class="text-justify">
+        (a) No conditioning leads to early mode collapse and unstable training.
+        (b) Disabling view conditioning mid-training causes rapid collapse within 1000 kimg.
+        (c) Semantic conditioning enables faster and more effective training.
+        (d–i) View-conditioned models show strong directional bias and global incoherence; while conditional views are realistic, non-conditional views are distorted and inconsistent. (d,e), (f,g), and (h,i) are results conditionally generated by random conditional views from PanoHead, SphereHead, and HyPlaneHead.
+                </p>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Semantic-conditional 3D-aware GANs
+                </h3>
+
+                <p class="text-justify">
+Unlike previous unconditional 3D-aware GANs and those conditioned on view angles, we propose a new class of 3D-aware GANs that use view-invariant semantic features as conditions. 
+This design eliminates view-dependent cues from the conditioning signal, thereby breaking the correlation between generation capability and specific views and effectively addressing the prevalent directional bias in prior methods. Furthermore, it ensures that the generator learns to produce diverse outputs by aligning with the true semantic distribution of the data. By consolidating supervision across different views under a shared semantic condition, the model enforces semantic consistency across all perspectives for each generated sample, which enhances global coherence and improves training efficiency.
+We refer to this class of models as <i>semantic-conditional 3D-aware GANs</i>.</p>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    BalanceHead
+                </h3>
+                <image src="img/fig4_method_pipeline_v2.png" width="100%">
+
+                <p class="text-justify">
+<p class="text-justify">
+Our BalanceHead, a semantic-conditional full-head 3D-aware GAN pipeline, as shown in fig. 4. 
+Building upon recent state-of-the-art HyPlaneHead model, our generator employs StyleGAN2 as the backbone and uses a hy-plane representation to encode 3D head geometry. 
+The pipeline first renders low-resolution images \(I\) via volume rendering and then applies a super-resolution module to generate high-resolution images \(I^{+}\) along with corresponding masks \(I^{m+}\). 
+In contrast to previous methods, we condition the generator using a view-invariant semantic feature \(c_{\text{sem}}\) instead of camera view information \(c_{\text{cam}}\), and incorporate the proposed ViCiCo loss to suppress multiple-face artifacts and ensure consistency between the generated output and the semantic condition.
+</p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Qualitative Comparison with State-of-the-art Methods
+                </h3>
+                <image src="img/fig5_sample_v3.png" width="100%">
+
+                <p class="text-justify">
+        Qualitative comparison with state-of-the art methods.
+        Conditioned on front-view: (a) EG3D (b) GGHead (c) PanoHead (d) SphereHead.
+        (e) HyPlaneHead conditioned on back-view. (f) Our view-conditional baseline conditioned on back-view.
+        (g) Our view-semantic-conditional baseline conditioned on side-view.
+        (h-n) Our BalanceHead conditioned on view-invariant semantic condition.
+        </p>
+            </div>
+        </div>
+
+
+        <!-- <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Single-View GAN Inversion
+                </h3>
+                <image src="img/fig6_pti_v5.png" width="100%">
+
+            </div>
+        </div> -->
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Random Sampling Results
+                </h3>
+                <image src="img/supp_multiview_sample_v1.png" width="100%">
+
+            </div>
+        </div>
+
+        <!-- <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Comparison of Single-view Image Inversion
+                </h3>
+                <center><image src="img/supp_pti1.png" width="100%"></center>
+
+                    <p class="text-justify">
+                        Left column (1-16): results of PanoHead. Right column (17-32): results of our SphereHead.
+                    </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Random Sampling Comparison
+                </h3>
+                <center><image src="img/supp_sample1.png" width="100%"></center>
+
+                    <p class="text-justify">
+                        The monocular images on the left are target images from FFHQ dataset. The upper and lower rows on the right portray are the results from PanoHead and our SphereHead model, respectively.
+                    </p>
+
+            </div>
+        </div> -->
+
+        <!-- <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Citation
+                </h3>
+                <div class="form-group col-md-10 col-md-offset-1">
+                    <textarea id="bibtex" class="form-control" readonly>
+@misc{li2025hyplaneheadrethinkingtriplanelikerepresentations,
+      title={HyPlaneHead: Rethinking Tri-plane-like Representations in Full-Head Image Synthesis}, 
+      author={Heyuan Li and Kenkun Liu and Lingteng Qiu and Qi Zuo and Keru Zheng and Zilong Dong and Xiaoguang Han},
+      year={2025},
+      eprint={2509.16748},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2509.16748}, 
+}
+                    </textarea>
+                </div>
+            </div>
+        </div> -->
+
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:0px">
+              <br>
+              <p style="text-align:center;font-size:small;">
+                The website template was borrowed from <a href="http://mgharbi.com/">Michaël Gharbi</a> and <a href="https://dorverbin.github.io/refnerf">Ref-NeRF</a>.
+              </p>
+            </td>
+          </tr>
+        </tbody></table>
+
+    </div>
+</body>
+</html>
