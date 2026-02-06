@@ -332,32 +332,20 @@ In contrast to previous methods, we condition the generator using a view-invaria
             </div>
         </div>
 
-        <!-- <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Comparison of Single-view Image Inversion
-                </h3>
-                <center><image src="img/supp_pti1.png" width="100%"></center>
-
-                    <p class="text-justify">
-                        Left column (1-16): results of PanoHead. Right column (17-32): results of our SphereHead.
-                    </p>
-            </div>
-        </div>
-
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
-                    Random Sampling Comparison
+                    Discussion
                 </h3>
-                <center><image src="img/supp_sample1.png" width="100%"></center>
+                <!-- <center><image src="img/supp_pti1.png" width="100%"></center> -->
 
                     <p class="text-justify">
-                        The monocular images on the left are target images from FFHQ dataset. The upper and lower rows on the right portray are the results from PanoHead and our SphereHead model, respectively.
+Trained on large-scale, high-quality images, our proposed 3D full-head model exhibits significant fidelity, diversity, and generalizability.  These attributes position the model not only as a potential foundation for specialized applications, such as 3D talking heads and head editing, but also as a high-fidelity 2D/3D data generator capable of supporting downstream tasks like 3D head reconstruction. 
+<br>
+Beyond its immediate applications, this work offers a new perspective on the synergy between 2D generative priors and 3D consistency. Specifically, our results demonstrate that fully 3D-consistent representations can be effectively supervised by imperfect, 3D-inconsistent multi-view data. This suggests a potential paradigm shift: rather than relying exclusively on strictly consistent (but expensive) multi-view data or purely single-view data (which often suffers from view imbalance), researchers can leverage the vast, though slightly inconsistent, output of powerful 2D generators. A key takeaway is that future research should perhaps place greater emphasis on developing inconsistency-tolerant 3D training strategies and robust semantic-conditioned models, rather than focusing solely on the pursuit of perfect consistency in the input data. Our method serves as an initial exploration in this direction, highlighting the critical role of view-invariant semantic information in bridging the gap between 2D priors and 3D consistency.
                     </p>
-
             </div>
-        </div> -->
+        </div>
 
         <!-- <div class="row">
             <div class="col-md-8 col-md-offset-2">
