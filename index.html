@@ -97,68 +97,66 @@
 				
 
 
-
-        
-          <tr onmouseout="balancehead_stop()" onmouseover="balancehead_start()" bgcolor="#ffffe0">
+          <tr onmouseout="lhmpp_stop()" onmouseover="lhmpp_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
-                <div class="two" id='balancehead_image'>
+                <div class="two" id='lhmpp_image'>
                   <video  width=100% muted autoplay loop>
-                    <source src="images/balancehead_after.mp4" type="video/mp4">
+                    <!-- <source src="images/balancehead_after.mp4" type="video/mp4"> -->
+                    <source src="images/lhmpp_before.png" type="video/mp4">
                     Your browser does not support the video tag.
                   </video>
                 </div>
-                <img src='images/balancehead_before.png' width="160">
+                <img src='images/lhmpp_before.png' width="160">
               </div>
               <script type="text/javascript">
-                function balancehead_start() {
-                  document.getElementById('balancehead_image').style.opacity = "1";
+                function lhmpp_start() {
+                  document.getElementById('lhmpp_image').style.opacity = "1";
                 }
     
-                function balancehead_stop() {
-                  document.getElementById('balancehead_image').style.opacity = "0";
+                function lhmpp_stop() {
+                  document.getElementById('lhmpp_image').style.opacity = "0";
                 }
-                balancehead_stop()
+                lhmpp_stop()
               </script>
             </td>
 
 
           <td style="padding:20px;width:75%;vertical-align:middle">
-            <a href="https://lhyfst.github.io/balancehead/">
-              <papertitle>Condition Matters in Full-head 3D GANs</papertitle>
+            <a href="https://lingtengqiu.github.io/LHM++/">
+              <papertitle>LHM++: An Efficient Large Human Reconstruction Model for Pose-free Images to 3D</papertitle>
             </a>
             <br>
+            <a href="https://lingtengqiu.github.io/">Lingteng Qiu</a><sup>*</sup>,
+            <a href="https://liphao99.github.io/">Peihao Li</a><sup>*</sup>,
             <strong>Heyuan Li</strong><sup>*</sup>,
-            Huimin Zhang<sup>*</sup>,
-            Yuda Qiu,
-            <a href="https://zhengwt-sun.com/">Zhengwentai Sun</a>,
-            Keru Zheng,
-            <a href="https://lingtengqiu.github.io/">Lingteng Qiu</a>,
-            <a href="https://liphao99.github.io/">Peihao Li</a>,
             <a href="https://hitsz-zuoqi.github.io/">Qi Zuo</a>,
-            Ce Chen,
-            <a href="https://paulyzheng.github.io/about/">Yujian Zheng</a>,
-            <a href="https://freedomgu.github.io/">Yuming Gu</a>,
-            Zilong Dong<sup>✉</sup>,
-            <a href="https://gaplab.cuhk.edu.cn/pages/people">Xiaoguang Han<sup>✉</sup></a>
+            <a href="https://scholar.google.com.hk/citations?user=aJPO514AAAAJ&hl=zh-CN&oi=ao">Xiaodong Gu</a>,
+            <a href="https://fdyuandong.github.io/yuandong/">Yuan Dong</a>,
+            <a href="https://weihao-yuan.com/">Weihao Yuan</a>,
+            <a href="https://prstrive.github.io/">Rui Peng</a>,
+            <a href="https://sites.google.com/site/zhusiyucs/home">Siyu Zhu</a>,
+            <a href="https://gaplab.cuhk.edu.cn/pages/people">Xiaoguang Han</a>,
+            <a href="https://guanyingc.github.io/">Guanying Chen</a><sup>✉</sup>,
+            Zilong Dong<sup>✉</sup>
             <br>
-            <em>ICLR</em>, 2026 &nbsp;
+            <em>In Submission</em>, 2026 &nbsp;
             <br>
-            <a href="https://lhyfst.github.io/balancehead/">project page</a>
+            <a href="https://lingtengqiu.github.io/LHM++/">project page</a>
             /
-            <a href="https://arxiv.org/abs/2602.07198">arXiv</a>
+            <a href="https://arxiv.org/pdf/2503.10625">arXiv</a>
             <!-- / -->
             <!-- <a href="">video</a> -->
-            /
-            <a href="https://github.com/lhyfst/BalanceHead">code</a>
+            <!-- / -->
+            <!-- <a href="https://github.com/lhyfst/BalanceHead">code</a> -->
             <p></p>
             <p>
-              Enable view-invariant generation through front-view-aligned semantic features and a large-scale, balanced synthetic dataset.
+              Introduce an efficient Point-Image Transformer that fuses hierarchical 3D point features with multimodal attention to generate high-fidelity, animatable 3D humans from pose-free images.
             </p>
           </td>
         </tr>
 
-        
+
 
 
 
@@ -221,7 +219,67 @@
         </tr>
 
 
+        
+          <tr onmouseout="balancehead_stop()" onmouseover="balancehead_start()" bgcolor="#ffffe0">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='balancehead_image'>
+                  <video  width=100% muted autoplay loop>
+                    <source src="images/balancehead_after.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <img src='images/balancehead_before.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function balancehead_start() {
+                  document.getElementById('balancehead_image').style.opacity = "1";
+                }
+    
+                function balancehead_stop() {
+                  document.getElementById('balancehead_image').style.opacity = "0";
+                }
+                balancehead_stop()
+              </script>
+            </td>
 
+
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <a href="https://lhyfst.github.io/balancehead/">
+              <papertitle>Condition Matters in Full-head 3D GANs</papertitle>
+            </a>
+            <br>
+            <strong>Heyuan Li</strong><sup>*</sup>,
+            Huimin Zhang<sup>*</sup>,
+            Yuda Qiu,
+            <a href="https://zhengwt-sun.com/">Zhengwentai Sun</a>,
+            Keru Zheng,
+            <a href="https://lingtengqiu.github.io/">Lingteng Qiu</a>,
+            <a href="https://liphao99.github.io/">Peihao Li</a>,
+            <a href="https://hitsz-zuoqi.github.io/">Qi Zuo</a>,
+            Ce Chen,
+            <a href="https://paulyzheng.github.io/about/">Yujian Zheng</a>,
+            <a href="https://freedomgu.github.io/">Yuming Gu</a>,
+            Zilong Dong<sup>✉</sup>,
+            <a href="https://gaplab.cuhk.edu.cn/pages/people">Xiaoguang Han<sup>✉</sup></a>
+            <br>
+            <em>ICLR</em>, 2026 &nbsp;
+            <br>
+            <a href="https://lhyfst.github.io/balancehead/">project page</a>
+            /
+            <a href="https://arxiv.org/abs/2602.07198">arXiv</a>
+            <!-- / -->
+            <!-- <a href="">video</a> -->
+            /
+            <a href="https://github.com/lhyfst/BalanceHead">code</a>
+            <p></p>
+            <p>
+              Enable view-invariant generation through front-view-aligned semantic features and a large-scale, balanced synthetic dataset.
+            </p>
+          </td>
+        </tr>
+
+        
 
     
           <tr onmouseout="hyplanehead_stop()" onmouseover="hyplanehead_start()">
