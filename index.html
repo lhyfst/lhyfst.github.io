@@ -11,12 +11,7 @@
 	<!-- <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>"> -->
 </head>
 
-<!-- TODO:
-1. add internship
-2. add news
-3. split Research to Research (statement) and Publications
-4. add new papers 
--->
+<!-- Future updates: news and additional public papers, after review. -->
 
 
 <body>
@@ -26,23 +21,12 @@
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr style="padding:0px">
             <td style="padding:2.5%;width:63%;vertical-align:middle">
-              <p style="text-align:center">
-                <!-- <name>LI Heyuan</name> -->
-
-                <p style="text-align:center">
-                  <name>
-                    LI Heyuan 
-                    <span style="font-family: 'Kaiti', 'STKaiti', '楷体', '华文楷体', serif; margin-left: 8px; font-size: 0.88em; ">
-                      李贺元</span>
-                  </name>
-                </p>
-
-              </p>
-              <p> I am a Ph.D. student at The Chinese University of Hong Kong, Shenzhen, 
-                working on human-centric 3D computer vision and graphics, advised by <a href="https://gaplab.cuhk.edu.cn/pages/people">Prof. HAN Xiaoguang</a>. 
-                Previously, I obtained my M.S. from National University of Singapore, advised by <a href="https://tanrobby.github.io/">Prof. Robby T. Tan</a>. 
+              <h1 class="profile-name">LI Heyuan <span class="chinese-name" lang="zh">李贺元</span></h1>
+              <p>I am a Ph.D. student at The Chinese University of Hong Kong, Shenzhen,
+                working on 3D computer vision and graphics, advised by <a href="https://gaplab.cuhk.edu.cn/pages/people">Prof. HAN Xiaoguang</a>.
+                Previously, I obtained my M.S. from National University of Singapore, advised by <a href="https://tanrobby.github.io/">Prof. Robby T. Tan</a>.
                 I received my Bachelor's degree from University of Electronic Science and Technology of China.
-
+              </p>
 
               <p>
                 I believe simple is better than complex.
@@ -51,10 +35,8 @@
               <p>
                 I (try to) practice <a href="http://slow-science.org/">Slow Science</a>. Slow is faster than fast. 
               </p>
+              <p class="job-notice">I expect to graduate in <strong>June 2027</strong> and am actively seeking <strong>full-time research opportunities</strong> in 3D generation and related areas. Please feel free to <a href="mailto:heyuanli@link.cuhk.edu.cn">get in touch</a>.</p>
 
-              
-
-              </p>
               <p style="text-align:center">
                 <!-- <a href="mailto:lhyfst@gmail.com">Email</a> &nbsp/&nbsp -->
                 <a href="mailto:heyuanli@link.cuhk.edu.cn">Email</a> &nbsp/&nbsp
@@ -75,20 +57,18 @@
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
             <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Research</heading>
-              <p>
-                My research goal is to develop a system that produces and drives high-fidelity 3D avatars in real-time using limited cost for everyone.
-                My current research focus is on the generalizability and robustness of NeRF/3DGS-based head avatars learned from large-scale images.
-              </p>
+              <h2>Research</h2>
+              <p id="research-summary">My research focuses on 3D generation and reconstruction. At Tencent Hunyuan3D, I contribute to the development of <strong>native 3D generative foundation models</strong>, focusing on <strong>ultra-high-fidelity geometry generation</strong>. My prior work in human-centric 3D vision and graphics spans neural 3D representations, reconstruction, and controllable generation, with an emphasis on generalization and learning from imperfect or synthetic data at scale. I am also exploring <strong>agentic 3D modeling</strong>, with broader interests in world models and embodied intelligence.</p>
 
-              (
+              <h2 id="publications">Publications</h2>
+              <p class="publication-legend">(
                 <sup>*</sup> Equal contribution. &ensp;
               <!-- <sup>†</sup> Project lead. &ensp; -->
                 <sup>✉</sup> Corresponding author. &ensp;
                 <span style="display: inline-block; width: 12px; height: 12px; background-color: #ffffd8; border: 1px solid #e6e6ad; vertical-align: middle; margin-right: 4px;"></span>
                 <!-- <span style="display: inline-block; width: 12px; height: 12px; background-color: #ffffd8; vertical-align: middle; margin-right: 4px;"></span> -->
                 <span style="vertical-align: middle;">Representative papers.</span>
-              )
+              )</p>
 
             </td>
           </tr>
@@ -101,11 +81,7 @@
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
                 <div class="two" id='lhmpp_image'>
-                  <video  width=100% muted autoplay loop>
-                    <!-- <source src="images/balancehead_after.mp4" type="video/mp4"> -->
-                    <source src="images/lhmpp_before.png" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
+                  <img src="images/lhmpp_before.png" width="160" alt="LHM++ reconstruction examples">
                 </div>
                 <img src='images/lhmpp_before.png' width="160">
               </div>
@@ -432,8 +408,6 @@
             /
             <a href="https://arxiv.org/abs/2404.05680">arXiv</a>
             /
-            <a href="">video</a>
-            /
             <a href="https://github.com/lhyfst/SphereHead">code</a>
             <p></p>
             <p>
@@ -467,7 +441,7 @@
           </td>
   
         <td style="padding:20px;width:75%;vertical-align:middle">
-          <a href="">
+          <a href="http://iccvm.org/2024/papers/lncs/150.pdf">
             <papertitle>Zero-shot Real Facial Attribute Separation and Transfer at Novel Views</papertitle>
           </a>
           <br>
@@ -545,7 +519,7 @@
         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
           <tr>
             <td>
-              <heading>Project</heading>
+              <h2>Earlier Projects</h2>
             </td>
           </tr>
         </tbody></table>
@@ -612,7 +586,6 @@
                   <p>
                     Use neural networks to represent cloth, external objects, and the environment, and conduct a learning-based cloth simulation.
                   </p>
-            </p>
           </td>
           </tr>
 

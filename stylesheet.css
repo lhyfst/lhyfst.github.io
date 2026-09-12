@@ -129,3 +129,22 @@ name {
 span.highlight {
   background-color: #ffffd0;
 }
+
+body { color: #222; background: #fff; }
+p { line-height: 1.55; }
+h2 { font: 400 22px 'Lato', Verdana, Helvetica, sans-serif; margin: 0 0 14px; }
+.profile-name { font: 400 32px 'Lato', Verdana, Helvetica, sans-serif; text-align: center; margin: 20px 0; }
+.chinese-name { font-family: 'Kaiti', 'STKaiti', serif; margin-left: 8px; font-size: .88em; }
+.job-notice { border-left: 3px solid #1772d0; background: #f3f7fc; padding: 12px 14px; }
+.publication-legend { margin-bottom: 0; color: #555; font-size: 13px; }
+a:focus-visible { outline: 2px solid #1772d0; outline-offset: 3px; }
+@media (max-width: 600px) {
+  body > table > tbody > tr > td > table:nth-child(1) > tbody > tr { display: flex; flex-direction: column-reverse; }
+  body > table > tbody > tr > td > table:nth-child(1) > tbody > tr > td { width: auto !important; max-width: 100% !important; padding: 16px 20px !important; }
+  body > table > tbody > tr > td > table:nth-child(1) > tbody > tr > td:last-child { text-align: center; padding-bottom: 0 !important; }
+  body > table > tbody > tr > td > table:nth-child(1) img { width: 140px !important; }
+  body > table > tbody > tr > td > table:nth-child(3) > tbody > tr,
+  body > table > tbody > tr > td > table:nth-child(5) > tbody > tr { display: block; }
+  body > table > tbody > tr > td > table:nth-child(3) > tbody > tr > td,
+  body > table > tbody > tr > td > table:nth-child(5) > tbody > tr > td { display: block; width: auto !important; }
+}
